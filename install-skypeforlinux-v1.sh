@@ -11,26 +11,10 @@
 #
 ##################################################################################################################
 
-# will not install to error....????
+# Downloading and installing latest teamviewer
 
-
-# rm /tmp/atom-amd64.deb
-
-# wget https://atom.io/download/deb -O /tmp/atom-amd64.deb
-# #curl -o /tmp/code_1.5.3-1474533365_amd64.deb https://code.visualstudio.com/docs/?dv=linux64_deb
-# sudo dpkg -i /tmp/atom-amd64.deb
-# #gdebi /tmp/code_1.5.3-1474533365_amd64.deb
-
-
-# rm /tmp/atom-amd64.deb
-
-sudo apt install atom -y
-
-
-##################################################################################################################
+sudo apt install -y skypeforlinux
 
 echo "################################################################"
 echo "###################    T H E   E N D      ######################"
 echo "################################################################"
-
-
