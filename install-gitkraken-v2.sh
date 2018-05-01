@@ -12,18 +12,40 @@
 ##################################################################################################################
 
 
-rm /tmp/gitkraken-amd64.deb
+#rm /tmp/gitkraken-amd64.deb
 
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb -O /tmp/gitkraken-amd64.deb
-sudo dpkg -i /tmp/gitkraken-amd64.deb
+#wget https://release.gitkraken.com/linux/gitkraken-amd64.deb -O /tmp/gitkraken-amd64.deb
+#sudo dpkg -i /tmp/gitkraken-amd64.deb
 
-rm /tmp/gitkraken-amd64.deb
+#rm /tmp/gitkraken-amd64.deb
 
-echo "fixing hardcoded icon"
-old="Icon=app"
-new="Icon=gitkraken"
-location="/usr/share/applications/gitkraken.desktop"
-sudo sed -i s/$old/$new/g $location
+#echo "fixing hardcoded icon"
+#old="Icon=app"
+#new="Icon=gitkraken"
+#location="/usr/share/applications/gitkraken.desktop"
+#sudo sed -i s/$old/$new/g $location
+
+package="snapd"
+echo "################################################################"
+echo "Checking if $package is installed"
+echo "Install $package for an easy installation"
+
+
+	# check if git is installed
+	if which $package > /dev/null; then
+		echo "$package was installed. Proceding..."
+
+		else
+
+		echo "################################################################"
+		echo "installing $package for this script to work"
+		echo "################################################################"
+
+	  	sudo apt install snapd -y
+		  	
+	fi
+
+sudo snap install gitkraken
 
 
 echo "################################################################"

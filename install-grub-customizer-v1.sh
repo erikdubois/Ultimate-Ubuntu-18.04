@@ -17,10 +17,10 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 
 
 # getting new info of this new repo
-sudo apt-get -y update
+sudo apt -y update
 
 # installing
-sudo apt-get install -y grub-customizer
+sudo apt install -y grub-customizer
 
 
 ############################################################################

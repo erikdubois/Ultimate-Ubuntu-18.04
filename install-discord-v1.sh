@@ -11,16 +11,36 @@
 #
 ##################################################################################################################
 
-# Downloading and installing latest teamviewer
 
-rm /tmp/skypeforlinux-64-alpha.deb
+# rm /tmp/discord-canary-0.0.9.deb
 
-wget https://go.skype.com/skypeforlinux-64-alpha.deb -O /tmp/skypeforlinux-64-alpha.deb
-sudo apt install -y libjpeg62:i386
-sudo dpkg -i /tmp/skypeforlinux-64-alpha.deb
+# sudo apt install -y libc++1 libc++abi1
+# wget https://discordapp.com/api/download/canary?platform=linux -O /tmp/discord-canary-0.0.9.deb
+# sudo dpkg -i /tmp/discord-canary-0.0.9.deb
 
-rm /tmp/skypeforlinux-64-alpha.deb
+# rm /tmp/discord-canary-0.0.9.deb
 
+package="snapd"
+echo "################################################################"
+echo "Checking if $package is installed"
+echo "Install $package for an easy installation"
+
+
+	# check if git is installed
+	if which $package > /dev/null; then
+		echo "$package was installed. Proceding..."
+
+		else
+
+		echo "################################################################"
+		echo "installing $package for this script to work"
+		echo "################################################################"
+
+	  	sudo apt install snapd -y
+		  	
+	fi
+
+sudo snap install discord
 
 
 echo "################################################################"

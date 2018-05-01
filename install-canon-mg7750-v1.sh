@@ -33,6 +33,8 @@ rm -r scangearmp2-3.20-1-deb
 
 echo "Extracted folders have been deleted"
 
+sudo apt --fix-broken install
+
 ############################################################################
 
 echo "################################################################"

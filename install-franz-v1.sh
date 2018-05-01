@@ -44,6 +44,8 @@ new="Icon=franz"
 location="/usr/share/applications/franz.desktop"
 sudo sed -i s/$old/$new/g $location
 
+sudo apt install libgconf-2-4 -y
+
 echo "################################################################"
 echo "###################    T H E   E N D      ######################"
 echo "################################################################"

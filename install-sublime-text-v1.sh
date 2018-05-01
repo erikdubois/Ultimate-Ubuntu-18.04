@@ -11,13 +11,34 @@
 #
 ##################################################################################################################
 
-rm /tmp/sublime-text_build-3126_amd64.deb
+#rm /tmp/sublime-text_build-3126_amd64.deb
 
-wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb -O /tmp/sublime-text_build-3126_amd64.deb
-sudo dpkg -i /tmp/sublime-text_build-3126_amd64.deb
+#wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb -O /tmp/sublime-text_build-3126_amd64.deb
+#sudo dpkg -i /tmp/sublime-text_build-3126_amd64.deb
 
-rm /tmp/sublime-text_build-3126_amd64.deb
+#rm /tmp/sublime-text_build-3126_amd64.deb
 
+package="snapd"
+echo "################################################################"
+echo "Checking if $package is installed"
+echo "Install $package for an easy installation"
+
+
+	# check if git is installed
+	if which $package > /dev/null; then
+		echo "$package was installed. Proceding..."
+
+		else
+
+		echo "################################################################"
+		echo "installing $package for this script to work"
+		echo "################################################################"
+
+	  	sudo apt install snapd -y
+		  	
+	fi
+
+sudo snap install sublime-text --classic
 
 ##################################################################################################################
 
