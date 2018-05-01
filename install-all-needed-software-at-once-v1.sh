@@ -52,64 +52,12 @@
 #
 ############################################################################
 
-# repo for grub-customizer
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
-# repo for variety wallpaper
-sudo add-apt-repository ppa:peterlevi/ppa -y
-
-
-
-############################################################################
-
-# after all these new repo's - getting new info
-sudo apt-get -y update
-
-############################################################################
-
-# donwloading and installing google chrome for netflix e.g.
-echo "downloading google chrome latest stable edition"
-
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y libcurl3
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
-sudo apt install -f -y
-
-############################################################################
-
-# repo for spotify
-# https://www.spotify.com/be-nl/download/linux/
-
-# 1. Add the Spotify repository signing key to be able to verify downloaded packages
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-
-# 2. Add the Spotify repository
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-
-# 3. Update list of available packages
-sudo apt-get update
-
-# 4. Install Spotify
-sudo apt install spotify-client
-
-##############################################################################################
-
-# Downloading and installing latest sublime text 3
-wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
-sudo dpkg -i sublime-text_build-3114_amd64.deb
-rm sublime-text_build-3114_amd64.deb
-
-
-##############################################################################################
-
-
 #software from 'normal' repositories
 echo "software from 'normal' repositories"
 sudo apt install -y catfish clementine curl evolution focuswriter frei0r-plugins geary gimp git gpick glances gparted
 sudo apt install -y hardinfo inkscape inxi kazam openshot p7zip-full ppa-purge radiotray screenruler scrot shutter slurm
 sudo apt install -y thunar vnstat winbind screenfetch plank
 sudo apt install -y browser-plugin-vlc vlc
-
 sudo apt install breeze-cursor-theme -y
 
 
@@ -123,7 +71,12 @@ sudo apt install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uud
 
 #software from extra repositories
 echo "software from extra repositories"
-sudo apt install -y grub-customizer variety   
+
+sh ./install-google-chrome-v*.sh
+sh ./install-grub-customizer-v*.sh
+sh ./install-spotify-v*.sh 
+sh ./install-sublime-text-v*.sh 
+sh ./install-variety-v*.sh  
 
 
 ############################################################################
